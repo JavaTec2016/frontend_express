@@ -8,16 +8,16 @@ const controller = require('../controllers/controller');
 router.get('/', controller.findAll);
 
 //ALTAS
-router.post('/', controller.create);
+router.post('/:tabla', controller.create);
 
 
 //CONSULTA
-router.get('/:table/:field/:value', controller.findBy);
+router.get('/:tabla/:field/:value', controller.findBy);
 
 //CAMBIOS
-router.post('/:field/:value', controller.update);
+router.post('/:tabla/:field/:value', controller.update);
 
 //BAJAS
-router.post('/eliminar/:field/:value', controller.delete);
+router.post('/eliminar/:tabla/:field/:value', controller.delete);
 
 module.exports = router;

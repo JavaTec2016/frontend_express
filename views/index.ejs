@@ -82,7 +82,7 @@
                                     </div>
                                     <%  } %>
 
-                                    <a href="/alumnos/altas" class="btn btn-success mt-4 ml-3"> + agregar </a>
+                                    <a href="/altas" class="btn btn-success mt-4 ml-3"> + agregar </a>
 
                                     <!--Cargar egistro dinamico-->
                                     <section class="example mt-4">
@@ -138,9 +138,9 @@
                 data.forEach(alumbo => {
                     console.log("ROW: ", alumbo)
                     //URLS del ABCC
-                    const eliminarLink = `/alumnos/eliminar/num_control/${alumbo.num_control}`;
+                    const eliminarLink = `alumnos/eliminar/alumnos/num_control/${alumbo.num_control}`;
                     const detallesLink = `/consulta?tabla=alumnos&num_control=${alumbo.num_control}`;
-                    const modificarLink = `/alumnos/num_control/${alumbo.num_control}?tabla=alumnos`;
+                    const modificarLink = `/cambios?tabla=alumnos&num_control=${alumbo.num_control}`;
                     let row = document.createElement('tr');
 
                     //crear los td con los datos del alumbo

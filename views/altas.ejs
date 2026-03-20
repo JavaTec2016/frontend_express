@@ -1,44 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alta alumno</title>
-</head>
-<body>
-    <form action="">
-        <label for="num_control">Numero de control: </label>
-        <input type="text">
-        <label for="nombre">Nombre(s):</label>
-        <input type="text">
-        <label for="primer_ap">Primer Apellido:</label>
-        <input type="text">
-        <label for="segundo_ap">Segundo Apellido:</label>
-        <input type="text">
-        <label for="fecha_nac">Fecha de nacimiento:</label>
-        <input type="date">
-        <label for="semestre">semestre:</label>
-        <select name="semestre" id="semestre">
-            <option value="1">1ro</option>
-            <option value="2">2do</option>
-            <option value="3">3ro</option>
-            <option value="4">4to</option>
-            <option value="5">5to</option>
-            <option value="6">6to</option>
-            <option value="7">7mo</option>
-            <option value="8">8vo</option>
-            <option value="9">9no</option>
-            <option value="10">10mo</option>
-        </select>
-        <label for="carrera">Carrera: </label>
-        <select name="carrera" id="carrera">
-            <option value="ISC">ISC</option>
-            <option value="IM">IM</option>
-            <option value="IIA">IIA</option>
-            <option value="CP">CP</option>
-            <option value="LAE">LAE</option>
-        </select>
 
-    </form>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="theme-color" content="#000000" />
+
+    <title>Modificaciones</title>
+
+    <!-- BUSTRAP-->
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <script src="/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="">
+                    <img src="../public/assets/images/estudiantes.png" class="img-fluid" /></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample07"
+                    aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarsExample07">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">INICIO</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Asignaturas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Docentes</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container mt-5 mb-5">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 style="font-size: 28px; margin-top: 50px" class="text-center">
+                    SERVICIOS ESCOLARES
+                </h1>
+
+                <div class="page-content">
+                    <div class="row">
+                        <div class="col-md-10">
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="/">Alumnos</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">
+                                        Agregar
+                                    </li>
+                                </ol>
+                            </nav>
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="content-box-large">
+                                        <div class="panel-heading">
+                                            <div class="panel-title">
+                                                <h2>Nuevo Alumbo</h2>
+                                            </div>
+                                        </div>
+
+                                        <div class="panel-body">
+                                            <section class="example mt-4">
+                                                <form method="post" role="form" action="/alumnos/alumnos"
+                                                    enctype="application/x-www-form-urlencoded">
+                                                    <div class="mb-3">
+                                                        <label for="num_control">Numero de control:
+                                                        </label>
+                                                        <input class="form-control" type="text" id="num_control" name="num_control" required/>
+                                                    </div>
+
+                                                    <div class="mb-3">
+                                                        <label for="nombre">Nombre(s):</label>
+                                                        <input class="form-control" type="text" id="nombre" name="nombre" />
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label for="primer_ap">Primer Apellido:</label>
+                                                        <input class="form-control" type="text" id="primer_ap" name="primer_ap" />
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label for="segundo_ap">Segundo Apellido:</label>
+                                                        <input class="form-control" type="text" id="segundo_ap" name="segundo_ap" />
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label for="fecha_nac">Fecha de nacimiento:</label>
+                                                        <input class="form-control" type="date" id="fecha_nac" name="fecha_nac" />
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label for="semestre">semestre:</label>
+                                                        <select class="form-control" name="semestre" id="semestre">
+                                                            <option value="1">1ro</option>
+                                                            <option value="2">2do</option>
+                                                            <option value="3">3ro</option>
+                                                            <option value="4">4to</option>
+                                                            <option value="5">5to</option>
+                                                            <option value="6">6to</option>
+                                                            <option value="7">7mo</option>
+                                                            <option value="8">8vo</option>
+                                                            <option value="9">9no</option>
+                                                            <option value="10">10mo</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label for="carrera">Carrera: </label>
+                                                        <select class="form-control" name="carrera" id="carrera">
+                                                            <option value="ISC">ISC</option>
+                                                            <option value="IM">IM</option>
+                                                            <option value="IIA">IIA</option>
+                                                            <option value="CP">CP</option>
+                                                            <option value="LAE">LAE</option>
+                                                        </select>
+                                                    </div>
+                                                    <button type="submit" class="btn btn-success">
+                                                        Agregar
+                                                    </button>
+                                                    <a href="/" class="btn btn-warning">Cancelar</a>
+                                                </form>
+                                            </section>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="text-muted mt-3 mb-3">
+        <div align="center">FUTER</div>
+    </footer>
 </body>
+
 </html>

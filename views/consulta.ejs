@@ -57,7 +57,7 @@
       <div class="row">
         <div class="col-md-12">
           <h1 style="font-size: 28px; margin-top: 50px" class="text-center">
-            SERBIsIOS ESCOLARES
+            SERBISIOS ESCOLARES
           </h1>
           <div class="page-content">
             <div class="row">
@@ -97,9 +97,18 @@
     </footer>
 
     <script type="text/javascript">
+      const camposNombres = {
+        'num_control': 'Numero de control',
+        'nombre':'Nombre(s)',
+        'primer_ap':'Primer Apellido',
+        'segundo_ap': 'Segundo Apellido',
+        'fecha_nac': 'Fecha de Nacimiento',
+        'semestre': 'Semestre',
+        'carrera':'Carrera',
+      }
       const url = new URL(window.location.href);
       const numControl = url.searchParams.get("num_control");
-      fetch("alumnos/num_control/" + numControl)
+      fetch("/alumnos/alumnos/num_control/" + numControl)
         .then((res) => {
           if (res.ok) return res.json();
         })
@@ -108,10 +117,15 @@
             console.log(json);
             const lista = json;
             const seccion = document.getElementById('datos');
-            lista.forEach(element => {
-                let h5 = document.createElement('h5');
-                h5.ele
-            });
+            const data = lista[0];
+            for(const campo in data){
+              let h5 = document.createElement('h5');
+              let p = document.createElement('p');
+              h5.textContent = camposNombres[campo];
+              p.textContent = data[campo];
+
+              seccion.append(h5, p);
+            }
         });
     </script>
   </body>

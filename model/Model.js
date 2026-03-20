@@ -17,7 +17,7 @@ class Model {
     create(callback = (err, result, fields) => { }) {
         if (this.tabla == null) throw new Error("ERROR: la tabla del modelo '" + this.constructor.name + "' no esta definida");
 
-        conexion.query("INSERT INTO " + this.tabla + " SET ?", [data()], (err, results, fields) => {
+        conexion.query("INSERT INTO " + this.tabla + " SET ?", [this.data()], (err, results, fields) => {
             if (err) console.error("Error de consulta: \n", err);
             console.log("Insercion exitosa");
             callback(err, results, fields);
@@ -33,9 +33,9 @@ class Model {
     update(data, filter, callback = (err, results, fields) => { }) {
         conexion.query(
             "UPDATE " + this.tabla + " SET " +
-            this.getQueryParams(data) +
+            this.getQueryParams(Object.keys(data)) +
             " WHERE " +
-            this.getQueryParams(filter)
+            this.getQueryParams(Object.keys(filter))
             , [...Object.values(data), ...Object.values(filter)], (err, results, fields) => {
                 if (err) console.error("Error de consulta: \n", err);
                 console.log("Cambio exitoso");
