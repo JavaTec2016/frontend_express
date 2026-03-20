@@ -17,8 +17,10 @@ exports.create = function(req, res){
 
     model.create((err, result, fields)=>{
         console.log("Creando...");
-        if(err) res.send(err);
-
+        if(err) {
+            res.send(err);
+            return;
+        }
         req.flash('message', "Insercion exitosa");
         res.redirect('/');
     })

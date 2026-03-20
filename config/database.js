@@ -1,3 +1,4 @@
+
 const mysql = require("mysql");
 
 const conexion = mysql.createConnection({
@@ -5,7 +6,7 @@ const conexion = mysql.createConnection({
     port: process.env.port,
     user: process.env.user,
     password: process.env.password,
-    database: process.env.db,
+    database: process.env.database,
     dateStrings: true,
 });
 
